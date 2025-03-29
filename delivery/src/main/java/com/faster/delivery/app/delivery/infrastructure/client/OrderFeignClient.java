@@ -4,12 +4,13 @@ import com.common.response.ApiResponse;
 import com.faster.delivery.app.delivery.application.dto.OrderUpdateApplicationRequestDto;
 import com.faster.delivery.app.delivery.infrastructure.client.dto.order.OrderUpdateResponseDto;
 import com.faster.delivery.app.global.config.FeignClientConfig;
-import java.util.UUID;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
+
+import java.util.UUID;
 
 @FeignClient(name = "order-service", configuration = FeignClientConfig.class)
 public interface OrderFeignClient {

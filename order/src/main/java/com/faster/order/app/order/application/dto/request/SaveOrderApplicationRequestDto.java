@@ -3,12 +3,13 @@ package com.faster.order.app.order.application.dto.request;
 import com.faster.order.app.order.domain.entity.Order;
 import com.faster.order.app.order.domain.entity.OrderItem;
 import com.faster.order.app.order.domain.entity.OrdererInfo;
+import lombok.Builder;
+
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.stream.Collectors;
-import lombok.Builder;
 
 @Builder
 public record SaveOrderApplicationRequestDto(

@@ -3,12 +3,13 @@ package com.faster.hub.app.hub.domain.repository;
 import com.faster.hub.app.hub.application.usecase.dto.request.SearchHubCondition;
 import com.faster.hub.app.hub.domain.entity.Hub;
 import com.faster.hub.app.hub.domain.projection.SearchHubProjection;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.EntityGraph;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 public interface HubRepository {
   Hub save(Hub hub);

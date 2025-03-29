@@ -10,10 +10,6 @@ import com.faster.order.app.order.domain.enums.OrderStatus;
 import com.faster.order.app.order.domain.repository.OrderRepository;
 import com.faster.order.app.order.fixture.OrderFixture;
 import com.faster.order.app.order.utils.DatabaseCleanUp;
-import java.math.BigDecimal;
-import java.util.List;
-import java.util.UUID;
-import java.util.stream.IntStream;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -23,6 +19,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.ActiveProfiles;
+
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.UUID;
+import java.util.stream.IntStream;
 
 @Import(DatabaseCleanUp.class)
 @SpringBootTest

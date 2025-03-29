@@ -3,11 +3,8 @@ package com.common.aop;
 import com.common.aop.annotation.AuthCheck;
 import com.common.exception.CustomException;
 import com.common.exception.type.ApiErrorCode;
-import com.common.resolver.dto.CurrentUserInfoDto;
 import com.common.resolver.dto.UserRole;
 import jakarta.servlet.http.HttpServletRequest;
-import java.util.Arrays;
-import java.util.Set;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
@@ -15,6 +12,8 @@ import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
+
+import java.util.Set;
 
 @Aspect
 @Component

@@ -4,10 +4,11 @@ import com.faster.message.app.message.application.client.OrderClient;
 import com.faster.message.app.message.application.dto.response.AGetOrderResponseDto;
 import com.faster.message.app.message.infrastructure.fegin.OrderFeignClient;
 import com.faster.message.app.message.infrastructure.fegin.dto.response.IGetOrderResponseDto;
-import java.util.UUID;
-import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+
+import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Component
 @RequiredArgsConstructor

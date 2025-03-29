@@ -4,9 +4,10 @@ import com.faster.product.app.product.application.client.CompanyClient;
 import com.faster.product.app.product.application.dto.response.GetCompanyApplicationResponseDto;
 import com.faster.product.app.product.infrastructure.feign.CompanyFeignClient;
 import com.faster.product.app.product.infrastructure.feign.dto.response.GetCompanyResponseDto;
-import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+
+import java.util.UUID;
 
 @Component
 @RequiredArgsConstructor

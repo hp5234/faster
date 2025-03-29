@@ -2,6 +2,7 @@ package com.faster.product.app.product.infrastructure.feign.dto.response;
 
 import com.faster.product.app.product.application.dto.response.GetCompanyApplicationResponseDto;
 import com.faster.product.app.product.application.dto.response.GetCompanyApplicationResponseDto.CompanyType;
+
 import java.time.LocalDateTime;
 import java.util.UUID;
 

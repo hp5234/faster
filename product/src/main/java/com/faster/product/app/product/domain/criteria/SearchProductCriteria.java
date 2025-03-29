@@ -1,15 +1,16 @@
 package com.faster.product.app.product.domain.criteria;
 
-import static com.faster.product.app.global.utils.QuerydslUtil.nullSafeBuilder;
-import static com.faster.product.app.product.domain.entity.QProduct.product;
-
 import com.common.exception.CustomException;
 import com.faster.product.app.global.exception.ProductErrorCode;
 import com.querydsl.core.BooleanBuilder;
+import lombok.Builder;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
-import lombok.Builder;
+
+import static com.faster.product.app.global.utils.QuerydslUtil.nullSafeBuilder;
+import static com.faster.product.app.product.domain.entity.QProduct.product;
 
 @Builder
 public record SearchProductCriteria(

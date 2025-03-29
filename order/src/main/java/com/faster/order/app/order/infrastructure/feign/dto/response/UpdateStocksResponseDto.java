@@ -2,9 +2,10 @@ package com.faster.order.app.order.infrastructure.feign.dto.response;
 
 import com.faster.order.app.order.application.dto.response.UpdateStocksApplicationResponseDto;
 import com.faster.order.app.order.application.dto.response.UpdateStocksApplicationResponseDto.UpdateStockApplicationResponseDto;
+import lombok.Builder;
+
 import java.util.List;
 import java.util.UUID;
-import lombok.Builder;
 
 @Builder
 public record UpdateStocksResponseDto(

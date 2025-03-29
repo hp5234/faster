@@ -7,35 +7,22 @@ import com.common.response.PageResponse;
 import com.faster.product.app.global.exception.ProductErrorCode;
 import com.faster.product.app.product.application.client.CompanyClient;
 import com.faster.product.app.product.application.client.HubClient;
-import com.faster.product.app.product.application.dto.request.GetProductsApplicationResponseDto;
-import com.faster.product.app.product.application.dto.request.SearchProductConditionDto;
-import com.faster.product.app.product.application.dto.request.SortedUpdateStocksApplicationRequestDto;
+import com.faster.product.app.product.application.dto.request.*;
 import com.faster.product.app.product.application.dto.request.SortedUpdateStocksApplicationRequestDto.UpdateStockApplicationRequestDto;
-import com.faster.product.app.product.application.dto.request.UpdateProductApplicationRequestDto;
-import com.faster.product.app.product.application.dto.request.UpdateProductHubApplicationRequestDto;
-import com.faster.product.app.product.application.dto.response.GetCompanyApplicationResponseDto;
+import com.faster.product.app.product.application.dto.response.*;
 import com.faster.product.app.product.application.dto.response.GetCompanyApplicationResponseDto.CompanyType;
 import com.faster.product.app.product.application.dto.response.GetHubsApplicationResponseDto.HubInfo;
-import com.faster.product.app.product.application.dto.response.SearchProductApplicationResponseDto;
-import com.faster.product.app.product.application.dto.response.UpdateProductHubApplicationResponseDto;
-import com.faster.product.app.product.application.dto.response.UpdateStocksApplicationResponseDto;
 import com.faster.product.app.product.application.dto.response.UpdateStocksApplicationResponseDto.UpdateStockApplicationResponseDto;
-import com.faster.product.app.product.application.dto.response.GetProductDetailApplicationResponseDto;
-import com.faster.product.app.product.application.dto.response.UpdateProductApplicationResponseDto;
-import com.faster.product.app.product.application.dto.request.SaveProductApplicationRequestDto;
 import com.faster.product.app.product.domain.entity.Product;
 import com.faster.product.app.product.domain.repository.ProductRepository;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
-import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
+
+import java.util.*;
 
 @RequiredArgsConstructor
 @Transactional(readOnly = true)

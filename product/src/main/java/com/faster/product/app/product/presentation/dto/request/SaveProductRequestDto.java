@@ -1,6 +1,7 @@
 package com.faster.product.app.product.presentation.dto.request;
 
 import com.faster.product.app.product.application.dto.request.SaveProductApplicationRequestDto;
+
 import java.math.BigDecimal;
 import java.util.UUID;
 

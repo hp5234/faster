@@ -1,6 +1,7 @@
 package com.faster.company.app.company.presentation.dto.request;
 
 import com.faster.company.app.company.application.dto.request.UpdateCompanyApplicationRequestDto;
+
 import java.util.UUID;
 
 public record UpdateCompanyRequestDto(

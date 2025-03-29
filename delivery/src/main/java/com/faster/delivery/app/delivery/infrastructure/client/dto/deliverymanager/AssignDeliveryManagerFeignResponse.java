@@ -1,10 +1,11 @@
 package com.faster.delivery.app.delivery.infrastructure.client.dto.deliverymanager;
 
 import com.faster.delivery.app.delivery.application.dto.AssignDeliveryManagerApplicationResponse;
+import lombok.Builder;
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
-import lombok.Builder;
 
 @Builder
 public record AssignDeliveryManagerFeignResponse(

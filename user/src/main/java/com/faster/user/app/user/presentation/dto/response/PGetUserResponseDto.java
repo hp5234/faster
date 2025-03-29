@@ -1,7 +1,7 @@
 package com.faster.user.app.user.presentation.dto.response;
 
-import com.common.resolver.dto.UserRole;
 import com.faster.user.app.user.application.dto.response.AGetUserResponseDto;
+
 import java.time.LocalDateTime;
 
 public record PGetUserResponseDto(

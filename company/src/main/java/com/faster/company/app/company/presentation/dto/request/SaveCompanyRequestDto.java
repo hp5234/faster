@@ -1,8 +1,9 @@
 package com.faster.company.app.company.presentation.dto.request;
 
 import com.faster.company.app.company.application.dto.request.SaveCompanyApplicationRequestDto;
-import java.util.UUID;
 import lombok.Builder;
+
+import java.util.UUID;
 
 @Builder
 public record SaveCompanyRequestDto(

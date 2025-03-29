@@ -1,8 +1,9 @@
 package com.faster.delivery.app.deliverymanager.domain.criteria;
 
+import lombok.Builder;
+
 import java.util.List;
 import java.util.UUID;
-import lombok.Builder;
 
 @Builder
 public record DeliveryManagerCriteria(

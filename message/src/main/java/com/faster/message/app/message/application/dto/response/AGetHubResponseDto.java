@@ -1,7 +1,8 @@
 package com.faster.message.app.message.application.dto.response;
 
-import java.util.List;
 import lombok.Builder;
+
+import java.util.List;
 
 @Builder
 public record AGetHubResponseDto(

@@ -1,9 +1,10 @@
 package com.faster.delivery.app.delivery.application.dto;
 
 import com.faster.delivery.app.delivery.domain.entity.Delivery;
+import lombok.Builder;
+
 import java.util.List;
 import java.util.UUID;
-import lombok.Builder;
 
 @Builder
 public record SendMessageApplicationRequestDto (

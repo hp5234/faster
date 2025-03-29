@@ -2,15 +2,11 @@ package com.faster.user.app.user.application.usecase;
 
 
 import com.common.response.PageResponse;
-import com.faster.user.app.user.application.dto.request.AUpdateUserRoleRequestDto;
 import com.faster.user.app.user.application.dto.request.ADeleteUserRequestDto;
 import com.faster.user.app.user.application.dto.request.AUpdateUserPasswordRequestDto;
+import com.faster.user.app.user.application.dto.request.AUpdateUserRoleRequestDto;
 import com.faster.user.app.user.application.dto.request.AUpdateUserSlackIdRequestDto;
-import com.faster.user.app.user.application.dto.response.AGetUserResponseDto;
-import com.faster.user.app.user.application.dto.response.ADeleteUserResponseDto;
-import com.faster.user.app.user.application.dto.response.AGetAllUserResponseDto;
-import com.faster.user.app.user.application.dto.response.AGetUserSlackIdResponseDto;
-import com.faster.user.app.user.application.dto.response.AUpdateUserRoleResponseDto;
+import com.faster.user.app.user.application.dto.response.*;
 
 public interface UserService {
 

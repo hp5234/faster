@@ -1,8 +1,9 @@
 package com.faster.delivery.app.deliverymanager.presentation.dto.api;
 
 import com.faster.delivery.app.deliverymanager.application.dto.DeliveryManagerUpdateDto;
-import java.util.UUID;
 import lombok.Builder;
+
+import java.util.UUID;
 
 @Builder
 public record DeliveryManagerUpdateRequestDto(

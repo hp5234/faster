@@ -1,8 +1,9 @@
 package com.faster.company.app.company.application.dto.request;
 
-import java.util.UUID;
 import lombok.Builder;
 import org.springframework.data.domain.Pageable;
+
+import java.util.UUID;
 
 @Builder
 public record GetCompaniesApplicationRequestDto (

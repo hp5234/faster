@@ -1,11 +1,6 @@
 package com.faster.user.app.auth.application.usecase;
 
 
-import static com.faster.user.app.global.exception.enums.AuthErrorCode.SIGNUP_INVALID_SLACK_ID_FORMAT;
-import static com.faster.user.app.global.exception.enums.AuthErrorCode.SIGNUP_INVALID_USERNAME_FORMAT;
-import static com.faster.user.app.global.exception.enums.AuthErrorCode.SIGN_IN_INVALID_PASSWORD;
-import static com.faster.user.app.global.exception.enums.AuthErrorCode.SIGN_IN_INVALID_USERNAME;
-
 import com.common.exception.CustomException;
 import com.common.resolver.dto.UserRole;
 import com.faster.user.app.auth.application.dto.SaveUserRequestDto;
@@ -16,14 +11,17 @@ import com.faster.user.app.auth.presentation.dto.response.SignInUserResponseDto;
 import com.faster.user.app.global.exception.enums.AuthErrorCode;
 import com.faster.user.app.user.domain.entity.User;
 import com.faster.user.app.user.domain.repository.UserRepository;
-import java.util.Optional;
-import java.util.concurrent.TimeUnit;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Optional;
+import java.util.concurrent.TimeUnit;
+
+import static com.faster.user.app.global.exception.enums.AuthErrorCode.*;
 
 @RequiredArgsConstructor
 @Service

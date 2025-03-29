@@ -1,11 +1,12 @@
 package com.faster.hub.app.hub.presentation.dto.response;
 
 import com.faster.hub.app.hub.application.usecase.dto.response.GetHubsApplicationInternalResponseDto;
+import lombok.Builder;
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
-import lombok.Builder;
 
 public record GetHubsInternalResponseDto(
     List<HubInfo> hubInfos

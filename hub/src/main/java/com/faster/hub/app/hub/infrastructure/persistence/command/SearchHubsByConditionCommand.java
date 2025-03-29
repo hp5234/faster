@@ -1,19 +1,20 @@
 package com.faster.hub.app.hub.infrastructure.persistence.command;
 
-import static com.faster.hub.app.hub.domain.entity.QHub.hub;
-import static com.faster.hub.app.hub.infrastructure.persistence.util.QuerydslUtil.nullSafeBuilder;
-
 import com.common.exception.CustomException;
 import com.faster.hub.app.global.exception.HubErrorCode;
 import com.faster.hub.app.hub.application.usecase.dto.request.SearchHubCondition;
 import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.types.Order;
 import com.querydsl.core.types.OrderSpecifier;
-import java.util.Arrays;
-import java.util.function.Function;
 import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
+
+import java.util.Arrays;
+import java.util.function.Function;
+
+import static com.faster.hub.app.hub.domain.entity.QHub.hub;
+import static com.faster.hub.app.hub.infrastructure.persistence.util.QuerydslUtil.nullSafeBuilder;
 
 @Builder
 public record SearchHubsByConditionCommand (

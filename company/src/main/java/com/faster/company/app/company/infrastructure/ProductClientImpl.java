@@ -6,9 +6,10 @@ import com.faster.company.app.company.application.dto.response.UpdateProductHubA
 import com.faster.company.app.company.infrastructure.feign.ProductFeignClient;
 import com.faster.company.app.company.infrastructure.feign.dto.request.UpdateProductHubRequestDto;
 import com.faster.company.app.company.infrastructure.feign.dto.response.UpdateProductHubResponseDto;
-import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+
+import java.util.UUID;
 
 @Component
 @RequiredArgsConstructor

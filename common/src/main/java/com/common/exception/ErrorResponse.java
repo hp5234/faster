@@ -1,8 +1,9 @@
 package com.common.exception;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import java.util.List;
 import org.springframework.http.HttpStatus;
+
+import java.util.List;
 
 public record ErrorResponse(
     int code,

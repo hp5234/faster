@@ -1,9 +1,10 @@
 package com.faster.order.app.order.application.dto.request;
 
+import lombok.Builder;
+
 import java.math.BigDecimal;
 import java.util.Map;
 import java.util.UUID;
-import lombok.Builder;
 
 @Builder
 public record GetProductsApplicationResponseDto(

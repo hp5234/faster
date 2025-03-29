@@ -9,6 +9,7 @@ import com.faster.company.app.company.application.dto.response.GetCompaniesAppli
 import com.faster.company.app.company.application.dto.response.GetCompanyApplicationResponseDto;
 import com.faster.company.app.company.application.dto.response.IGetCompanyApplicationResponseDto;
 import com.faster.company.app.company.application.dto.response.UpdateCompanyApplicationResponseDto;
+
 import java.util.UUID;
 
 public interface CompanyService {

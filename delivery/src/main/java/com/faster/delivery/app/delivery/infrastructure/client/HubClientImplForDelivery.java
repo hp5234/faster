@@ -6,10 +6,11 @@ import com.faster.delivery.app.delivery.application.dto.HubDto;
 import com.faster.delivery.app.delivery.application.dto.HubRouteDto;
 import com.faster.delivery.app.delivery.infrastructure.client.dto.hub.HubGetListResponseDto;
 import com.faster.delivery.app.delivery.infrastructure.client.dto.hub.HubPathResponseDto;
-import java.util.List;
-import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.UUID;
 
 @RequiredArgsConstructor
 @Component

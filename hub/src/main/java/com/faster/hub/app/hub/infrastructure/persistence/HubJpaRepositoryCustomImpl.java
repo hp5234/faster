@@ -1,17 +1,18 @@
 package com.faster.hub.app.hub.infrastructure.persistence;
 
-import static com.faster.hub.app.hub.domain.entity.QHub.hub;
-
 import com.faster.hub.app.hub.application.usecase.dto.request.SearchHubCondition;
 import com.faster.hub.app.hub.domain.projection.SearchHubProjection;
 import com.faster.hub.app.hub.infrastructure.persistence.command.SearchHubsByConditionCommand;
 import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.support.PageableExecutionUtils;
+
+import java.util.List;
+
+import static com.faster.hub.app.hub.domain.entity.QHub.hub;
 
 @RequiredArgsConstructor
 public class HubJpaRepositoryCustomImpl implements HubJpaRepositoryCustom{

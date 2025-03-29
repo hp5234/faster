@@ -2,10 +2,9 @@ package com.faster.message.app.message.domain.repository;
 
 import com.faster.message.app.message.domain.entity.Message;
 import com.faster.message.app.message.presentation.dto.response.PGetAllMessageResponseDto;
-import java.time.LocalDate;
-import java.util.UUID;
 import org.springframework.data.domain.Page;
-import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.time.LocalDate;
 
 public interface MessageRepository {
   Message save(Message message);

@@ -7,12 +7,13 @@ import com.faster.delivery.app.delivery.application.dto.HubDto;
 import com.faster.delivery.app.deliverymanager.domain.criteria.DeliveryManagerCriteria;
 import com.faster.delivery.app.deliverymanager.domain.entity.DeliveryManager;
 import com.faster.delivery.app.deliverymanager.domain.repository.DeliveryManagerRepository;
-import java.util.List;
-import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.UUID;
 
 @Component
 @RequiredArgsConstructor

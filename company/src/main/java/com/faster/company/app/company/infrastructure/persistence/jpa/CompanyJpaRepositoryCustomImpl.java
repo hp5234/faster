@@ -1,16 +1,17 @@
 package com.faster.company.app.company.infrastructure.persistence.jpa;
 
-import static com.faster.company.app.company.domain.entity.QCompany.company;
-
 import com.faster.company.app.company.application.dto.request.SearchCompaniesCondition;
 import com.faster.company.app.company.domain.projection.SearchCompaniesProjection;
 import com.faster.company.app.company.infrastructure.persistence.command.SearchCompaniesByConditionCommand;
 import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.support.PageableExecutionUtils;
+
+import java.util.List;
+
+import static com.faster.company.app.company.domain.entity.QCompany.company;
 
 @RequiredArgsConstructor
 public class CompanyJpaRepositoryCustomImpl implements CompanyJpaRepositoryCustom{

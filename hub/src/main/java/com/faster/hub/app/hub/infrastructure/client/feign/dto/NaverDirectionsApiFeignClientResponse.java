@@ -1,6 +1,7 @@
 package com.faster.hub.app.hub.infrastructure.client.feign.dto;
 
 import com.faster.hub.app.hub.application.usecase.dto.response.DirectionsApiApplicationResponseDto;
+
 import java.time.LocalDateTime;
 import java.util.List;
 

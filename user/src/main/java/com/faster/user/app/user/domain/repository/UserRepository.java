@@ -2,9 +2,10 @@ package com.faster.user.app.user.domain.repository;
 
 import com.faster.user.app.user.domain.entity.User;
 import com.faster.user.app.user.infrastructure.persistence.jpa.dto.QUserProjection;
-import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+
+import java.util.Optional;
 
 public interface UserRepository {
   Optional<User> findById(Long userId);

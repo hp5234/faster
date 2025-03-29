@@ -7,27 +7,19 @@ import com.common.response.PageResponse;
 import com.faster.company.app.company.application.client.HubClient;
 import com.faster.company.app.company.application.client.ProductClient;
 import com.faster.company.app.company.application.client.UserClient;
-import com.faster.company.app.company.application.dto.request.GetCompaniesApplicationRequestDto;
-import com.faster.company.app.company.application.dto.request.SaveCompanyApplicationRequestDto;
-import com.faster.company.app.company.application.dto.request.SearchCompaniesCondition;
-import com.faster.company.app.company.application.dto.request.UpdateCompanyApplicationRequestDto;
-import com.faster.company.app.company.application.dto.request.UpdateProductHubApplicationRequestDto;
-import com.faster.company.app.company.application.dto.response.GetCompaniesApplicationResponseDto;
-import com.faster.company.app.company.application.dto.response.GetCompanyApplicationResponseDto;
+import com.faster.company.app.company.application.dto.request.*;
+import com.faster.company.app.company.application.dto.response.*;
 import com.faster.company.app.company.application.dto.response.GetHubsApplicationResponseDto.HubInfo;
-import com.faster.company.app.company.application.dto.response.IGetCompanyApplicationResponseDto;
-import com.faster.company.app.company.application.dto.response.GetUserApplicationResponseDto;
-import com.faster.company.app.company.application.dto.response.UpdateCompanyApplicationResponseDto;
-import com.faster.company.app.company.application.dto.response.UpdateProductHubApplicationResponseDto;
 import com.faster.company.app.company.domain.entity.Company;
 import com.faster.company.app.company.domain.repository.CompanyRepository;
 import com.faster.company.app.global.exception.CompanyErrorCode;
-import java.util.Optional;
-import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
+
+import java.util.Optional;
+import java.util.UUID;
 
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
