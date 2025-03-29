@@ -1,7 +1,17 @@
 spring:
+  config.activate.on-profile: local
   data:
     redis:
       host: localhost
+      port: 6379
+      username: default
+      password: systempass
+---
+spring:
+  config.activate.on-profile: develop
+  data:
+    redis:
+      host: redis
       port: 6379
       username: default
       password: systempass
