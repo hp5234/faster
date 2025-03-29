@@ -22,10 +22,9 @@ spring:
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
-
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     properties:
       hibernate:
         show_sql: true
@@ -33,9 +32,6 @@ spring:
         use_sql_comments: ture
         default_schema: faster
     database: postgresql
-
-
-
 
 eureka:
   client:

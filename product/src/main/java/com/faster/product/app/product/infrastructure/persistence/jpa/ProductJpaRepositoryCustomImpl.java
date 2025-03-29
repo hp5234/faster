@@ -1,8 +1,5 @@
 package com.faster.product.app.product.infrastructure.persistence.jpa;
 
-import static com.faster.product.app.global.utils.QuerydslUtil.nullSafeBuilder;
-import static com.faster.product.app.product.domain.entity.QProduct.product;
-
 import com.common.exception.CustomException;
 import com.common.resolver.dto.UserRole;
 import com.faster.product.app.global.exception.ProductErrorCode;
@@ -13,17 +10,19 @@ import com.querydsl.core.types.Order;
 import com.querydsl.core.types.OrderSpecifier;
 import com.querydsl.jpa.impl.JPAQuery;
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.List;
-import java.util.UUID;
-import java.util.function.Function;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.support.PageableExecutionUtils;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.UUID;
+import java.util.function.Function;
+
+import static com.faster.product.app.global.utils.QuerydslUtil.nullSafeBuilder;
+import static com.faster.product.app.product.domain.entity.QProduct.product;
 
 
 @RequiredArgsConstructor
@@ -53,8 +52,8 @@ public class ProductJpaRepositoryCustomImpl implements ProductJpaRepositoryCusto
             role == UserRole.ROLE_MASTER
                 ? searchMasterCondition(condition)
                 : searchCondition(condition, companyId)
-        )
-        .orderBy(orderSpecifiers);
+        );
+        // .orderBy(orderSpecifiers);
 
     return PageableExecutionUtils.getPage(dtoList, pageable, () -> countQuery.fetchOne());
   }
