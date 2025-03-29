@@ -1,10 +1,11 @@
 package com.faster.delivery.app.delivery.infrastructure.client.dto.hub;
 
 import com.faster.delivery.app.delivery.application.dto.HubDto;
+import lombok.Builder;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-import lombok.Builder;
 
 @Builder
 public record HubGetListResponseDto(

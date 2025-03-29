@@ -2,9 +2,10 @@ package com.faster.delivery.app.delivery.presentaion.dto.api;
 
 import com.faster.delivery.app.delivery.application.dto.DeliveryDetailDto;
 import com.faster.delivery.app.delivery.application.dto.DeliveryDetailDto.DeliveryRouteDto;
+import lombok.Builder;
+
 import java.util.ArrayList;
 import java.util.List;
-import lombok.Builder;
 
 @Builder
 public record DeliveryGetDetailResponseDto(

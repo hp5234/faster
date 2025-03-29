@@ -2,6 +2,7 @@ package com.faster.hub.app.hub.infrastructure.persistence.util;
 
 import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.types.dsl.BooleanExpression;
+
 import java.util.function.Supplier;
 
 public class QuerydslUtil {

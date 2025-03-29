@@ -4,11 +4,12 @@ import com.faster.message.app.message.application.client.HubClient;
 import com.faster.message.app.message.application.dto.response.AGetHubResponseDto;
 import com.faster.message.app.message.infrastructure.fegin.HubFeignClient;
 import com.faster.message.app.message.infrastructure.fegin.dto.response.IGetHubResponseDto;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
 
 
 @Component

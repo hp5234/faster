@@ -2,8 +2,9 @@ package com.faster.delivery.app.delivery.application.dto;
 
 import com.faster.delivery.app.delivery.domain.entity.DeliveryRoute;
 import com.faster.delivery.app.delivery.domain.entity.DeliveryRoute.Status;
-import java.util.UUID;
 import lombok.Builder;
+
+import java.util.UUID;
 
 @Builder
 public record HubRouteDto(

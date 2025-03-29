@@ -3,12 +3,8 @@ package com.faster.order.app.order.presentation.dto.request;
 import com.faster.order.app.order.application.dto.request.SaveOrderApplicationRequestDto;
 import com.faster.order.app.order.application.dto.request.SaveOrderApplicationRequestDto.SaveOrderItemApplicationRequestDto;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.Digits;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.PositiveOrZero;
+import jakarta.validation.constraints.*;
+
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;

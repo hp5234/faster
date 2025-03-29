@@ -1,10 +1,10 @@
 package com.faster.hub.app.hub.presentation.dto.response;
 
 import com.faster.hub.app.hub.application.usecase.dto.response.UpdateHubRoutesApplicationResponseDto;
+import lombok.Builder;
+
 import java.util.List;
 import java.util.UUID;
-import java.util.stream.Collectors;
-import lombok.Builder;
 
 @Builder
 public record UpdateHubRoutesResponseDto (

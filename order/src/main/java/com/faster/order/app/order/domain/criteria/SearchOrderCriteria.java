@@ -1,15 +1,16 @@
 package com.faster.order.app.order.domain.criteria;
 
-import static com.faster.order.app.global.utils.QuerydslUtil.nullSafeBuilder;
-import static com.faster.order.app.order.domain.entity.QOrder.order;
-
 import com.common.exception.CustomException;
 import com.faster.order.app.global.exception.OrderErrorCode;
 import com.faster.order.app.order.domain.enums.OrderStatus;
 import com.querydsl.core.BooleanBuilder;
+import lombok.Builder;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import lombok.Builder;
+
+import static com.faster.order.app.global.utils.QuerydslUtil.nullSafeBuilder;
+import static com.faster.order.app.order.domain.entity.QOrder.order;
 
 @Builder
 public record SearchOrderCriteria(

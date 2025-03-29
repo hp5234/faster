@@ -2,12 +2,13 @@ package com.faster.product.app.product.presentation.dto.response;
 
 import com.faster.product.app.product.application.dto.request.GetProductsApplicationResponseDto;
 import com.faster.product.app.product.application.dto.request.GetProductsApplicationResponseDto.GetProductApplicationResponseDto;
+import lombok.Builder;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Map;
 import java.util.UUID;
 import java.util.stream.Collectors;
-import lombok.Builder;
 
 @Builder
 public record GetProductsResponseDto(

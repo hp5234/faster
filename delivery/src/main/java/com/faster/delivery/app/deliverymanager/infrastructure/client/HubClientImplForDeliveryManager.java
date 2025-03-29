@@ -4,10 +4,11 @@ import com.common.response.ApiResponse;
 import com.faster.delivery.app.deliverymanager.application.HubClient;
 import com.faster.delivery.app.deliverymanager.application.dto.HubDto;
 import com.faster.delivery.app.deliverymanager.infrastructure.client.dto.HubGetListResponseDto;
-import java.util.List;
-import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.UUID;
 
 @RequiredArgsConstructor
 @Component

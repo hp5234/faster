@@ -4,14 +4,10 @@ import com.common.resolver.dto.CurrentUserInfoDto;
 import com.common.response.PageResponse;
 import com.faster.order.app.order.application.dto.request.SaveOrderApplicationRequestDto;
 import com.faster.order.app.order.application.dto.request.SearchOrderConditionDto;
-import com.faster.order.app.order.application.dto.response.CancelOrderApplicationResponseDto;
-import com.faster.order.app.order.application.dto.response.GetOrderDetailApplicationResponseDto;
-import com.faster.order.app.order.application.dto.response.IGetOrderDetailApplicationResponseDto;
-import com.faster.order.app.order.application.dto.response.InternalConfirmOrderApplicationResponseDto;
-import com.faster.order.app.order.application.dto.response.InternalUpdateOrderStatusApplicationResponseDto;
-import com.faster.order.app.order.application.dto.response.SearchOrderApplicationResponseDto;
-import java.util.UUID;
+import com.faster.order.app.order.application.dto.response.*;
 import org.springframework.data.domain.Pageable;
+
+import java.util.UUID;
 
 public interface OrderService {
 

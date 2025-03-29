@@ -5,11 +5,12 @@ import com.faster.order.app.order.domain.criteria.SearchOrderCriteria;
 import com.faster.order.app.order.domain.entity.Order;
 import com.faster.order.app.order.domain.enums.OrderStatus;
 import com.faster.order.app.order.domain.projection.SearchOrderProjection;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
 public interface OrderRepository {
 

@@ -1,8 +1,9 @@
 package com.faster.company.app.company.infrastructure.feign.dto.request;
 
 import com.faster.company.app.company.application.dto.request.UpdateProductHubApplicationRequestDto;
-import java.util.UUID;
 import lombok.Builder;
+
+import java.util.UUID;
 
 @Builder
 public record UpdateProductHubRequestDto(

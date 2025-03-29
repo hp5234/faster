@@ -1,8 +1,9 @@
 package com.faster.delivery.app.delivery.domain.criteria;
 
 import com.faster.delivery.app.delivery.domain.entity.Delivery.Status;
-import java.util.UUID;
 import lombok.Builder;
+
+import java.util.UUID;
 
 @Builder
 public record DeliveryCriteria(

@@ -4,9 +4,10 @@ import com.faster.company.app.company.application.client.HubClient;
 import com.faster.company.app.company.application.dto.response.GetHubsApplicationResponseDto;
 import com.faster.company.app.company.infrastructure.feign.HubFeignClient;
 import com.faster.company.app.company.infrastructure.feign.dto.response.GetHubsResponseDto;
-import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+
+import java.util.UUID;
 
 @Component
 @RequiredArgsConstructor

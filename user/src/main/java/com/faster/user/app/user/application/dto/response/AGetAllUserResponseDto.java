@@ -2,6 +2,7 @@ package com.faster.user.app.user.application.dto.response;
 
 import com.common.resolver.dto.UserRole;
 import com.faster.user.app.user.infrastructure.persistence.jpa.dto.QUserProjection;
+
 import java.time.LocalDateTime;
 
 

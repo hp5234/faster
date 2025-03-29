@@ -2,11 +2,12 @@ package com.faster.order.app.order.infrastructure.feign.dto.response;
 
 import com.faster.order.app.order.application.dto.request.GetProductsApplicationResponseDto;
 import com.faster.order.app.order.application.dto.request.GetProductsApplicationResponseDto.GetProductApplicationResponseDto;
+import lombok.Builder;
+
 import java.math.BigDecimal;
 import java.util.Map;
 import java.util.UUID;
 import java.util.stream.Collectors;
-import lombok.Builder;
 
 @Builder
 public record GetProductsResponseDto(

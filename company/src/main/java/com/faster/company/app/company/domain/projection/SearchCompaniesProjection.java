@@ -1,6 +1,7 @@
 package com.faster.company.app.company.domain.projection;
 
 import com.faster.company.app.company.domain.enums.CompanyType;
+
 import java.time.LocalDateTime;
 import java.util.UUID;
 

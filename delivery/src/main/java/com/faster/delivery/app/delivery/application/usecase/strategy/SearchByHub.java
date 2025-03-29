@@ -10,11 +10,12 @@ import com.faster.delivery.app.delivery.domain.criteria.DeliveryCriteria;
 import com.faster.delivery.app.delivery.domain.entity.Delivery;
 import com.faster.delivery.app.delivery.domain.entity.Delivery.Status;
 import com.faster.delivery.app.delivery.domain.repository.DeliveryRepository;
-import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
+
+import java.util.Optional;
 
 @Component
 @RequiredArgsConstructor

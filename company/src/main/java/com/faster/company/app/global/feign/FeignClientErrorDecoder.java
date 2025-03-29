@@ -1,25 +1,26 @@
 package com.faster.company.app.global.feign;
 
-import static org.apache.commons.lang.StringUtils.EMPTY;
-
 import com.common.exception.CustomException;
 import com.common.exception.ErrorResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import feign.Request;
 import feign.Response;
 import feign.codec.ErrorDecoder;
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
-import java.util.Collection;
-import java.util.Map;
-import java.util.Objects;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 import org.springframework.util.StreamUtils;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.util.Collection;
+import java.util.Map;
+import java.util.Objects;
+
+import static org.apache.commons.lang.StringUtils.EMPTY;
 
 @Slf4j
 @RequiredArgsConstructor

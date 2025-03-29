@@ -1,7 +1,8 @@
 package com.faster.company.app.company.domain.command;
 
-import java.util.UUID;
 import lombok.Builder;
+
+import java.util.UUID;
 
 @Builder
 public record UpdateCompanyCommand(

@@ -1,8 +1,9 @@
 package com.faster.company.app.company.presentation.dto.response;
 
 import com.faster.company.app.company.application.dto.response.UpdateCompanyApplicationResponseDto;
-import java.util.UUID;
 import lombok.Builder;
+
+import java.util.UUID;
 
 @Builder
 public record UpdateCompanyResponseDto(

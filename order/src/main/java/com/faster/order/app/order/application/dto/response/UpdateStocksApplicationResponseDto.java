@@ -1,9 +1,9 @@
 package com.faster.order.app.order.application.dto.response;
 
-import com.faster.order.app.order.domain.entity.OrderItem;
+import lombok.Builder;
+
 import java.util.List;
 import java.util.UUID;
-import lombok.Builder;
 
 @Builder
 public record UpdateStocksApplicationResponseDto(

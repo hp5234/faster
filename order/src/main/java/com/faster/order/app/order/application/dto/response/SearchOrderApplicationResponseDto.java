@@ -2,10 +2,11 @@ package com.faster.order.app.order.application.dto.response;
 
 import com.faster.order.app.order.domain.enums.OrderStatus;
 import com.faster.order.app.order.domain.projection.SearchOrderProjection;
+import lombok.Builder;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
-import lombok.Builder;
 
 @Builder
 public record SearchOrderApplicationResponseDto(

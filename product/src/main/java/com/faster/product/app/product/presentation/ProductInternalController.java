@@ -8,24 +8,19 @@ import com.common.response.ApiResponse;
 import com.faster.product.app.product.application.usecase.ProductService;
 import com.faster.product.app.product.presentation.dto.request.UpdateProductHubRequestDto;
 import com.faster.product.app.product.presentation.dto.request.UpdateStocksRequestDto;
+import com.faster.product.app.product.presentation.dto.response.GetProductsResponseDto;
 import com.faster.product.app.product.presentation.dto.response.UpdateProductHubResponseDto;
 import com.faster.product.app.product.presentation.dto.response.UpdateStocksResponseDto;
-import com.faster.product.app.product.presentation.dto.response.GetProductsResponseDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
-import java.util.Set;
-import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Set;
+import java.util.UUID;
 
 @Tag(name = "상품(Internal)", description = "상품 조회 및 수정")
 @RequestMapping("/internal/products")

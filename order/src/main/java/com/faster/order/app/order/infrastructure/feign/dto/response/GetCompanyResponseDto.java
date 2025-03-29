@@ -1,6 +1,7 @@
 package com.faster.order.app.order.infrastructure.feign.dto.response;
 
 import com.faster.order.app.order.application.dto.response.GetCompanyApplicationResponseDto;
+
 import java.time.LocalDateTime;
 import java.util.UUID;
 

@@ -1,8 +1,9 @@
 package com.faster.hub.app.hub.application.usecase.dto.response;
 
+import lombok.Builder;
+
 import java.util.List;
 import java.util.UUID;
-import lombok.Builder;
 
 public record GetPathsApplicationResponseDto (
   List<Path> paths

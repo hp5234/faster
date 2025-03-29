@@ -1,6 +1,7 @@
 package com.common.aop.annotation;
 
 import com.common.resolver.dto.UserRole;
+
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

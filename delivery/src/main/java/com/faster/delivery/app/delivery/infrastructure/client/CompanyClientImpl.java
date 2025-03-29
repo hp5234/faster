@@ -3,9 +3,10 @@ package com.faster.delivery.app.delivery.infrastructure.client;
 import com.faster.delivery.app.delivery.application.CompanyClient;
 import com.faster.delivery.app.delivery.application.dto.CompanyDto;
 import com.faster.delivery.app.delivery.infrastructure.client.dto.company.CompanyGetResponseDto;
-import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+
+import java.util.UUID;
 
 @RequiredArgsConstructor
 @Component

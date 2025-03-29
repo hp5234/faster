@@ -1,7 +1,8 @@
 package com.faster.order.app.order.application.dto.response;
 
-import java.util.UUID;
 import lombok.Builder;
+
+import java.util.UUID;
 
 @Builder
 public record SaveDeliveryApplicationResponseDto(

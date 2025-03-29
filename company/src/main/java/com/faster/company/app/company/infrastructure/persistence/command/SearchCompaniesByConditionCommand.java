@@ -1,8 +1,5 @@
 package com.faster.company.app.company.infrastructure.persistence.command;
 
-import static com.faster.company.app.company.domain.entity.QCompany.company;
-import static com.faster.company.app.company.infrastructure.persistence.util.QuerydslUtil.nullSafeBuilder;
-
 import com.common.exception.CustomException;
 import com.faster.company.app.company.application.dto.request.SearchCompaniesCondition;
 import com.faster.company.app.company.domain.enums.CompanyType;
@@ -10,12 +7,16 @@ import com.faster.company.app.global.exception.CompanyErrorCode;
 import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.types.Order;
 import com.querydsl.core.types.OrderSpecifier;
-import java.util.Arrays;
-import java.util.UUID;
-import java.util.function.Function;
 import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
+
+import java.util.Arrays;
+import java.util.UUID;
+import java.util.function.Function;
+
+import static com.faster.company.app.company.domain.entity.QCompany.company;
+import static com.faster.company.app.company.infrastructure.persistence.util.QuerydslUtil.nullSafeBuilder;
 
 @Builder
 public record SearchCompaniesByConditionCommand (

@@ -2,9 +2,10 @@ package com.faster.product.app.product.presentation.dto.response;
 
 import com.faster.product.app.product.application.dto.response.UpdateStocksApplicationResponseDto;
 import com.faster.product.app.product.application.dto.response.UpdateStocksApplicationResponseDto.UpdateStockApplicationResponseDto;
+import lombok.Builder;
+
 import java.util.List;
 import java.util.UUID;
-import lombok.Builder;
 
 @Builder
 public record UpdateStocksResponseDto(

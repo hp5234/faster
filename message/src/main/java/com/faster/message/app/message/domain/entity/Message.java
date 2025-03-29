@@ -1,21 +1,15 @@
 package com.faster.message.app.message.domain.entity;
 
-import static com.faster.message.app.message.domain.enums.MessageType.HUB_MANAGER;
-
 import com.common.domain.BaseEntity;
 import com.faster.message.app.message.domain.enums.MessageType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import java.time.LocalDateTime;
-import java.util.UUID;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+
+import java.time.LocalDateTime;
+import java.util.UUID;
+
+import static com.faster.message.app.message.domain.enums.MessageType.HUB_MANAGER;
 
 @Getter
 @RequiredArgsConstructor

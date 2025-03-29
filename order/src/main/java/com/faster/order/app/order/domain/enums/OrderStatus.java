@@ -2,9 +2,10 @@ package com.faster.order.app.order.domain.enums;
 
 import com.common.exception.CustomException;
 import com.faster.order.app.global.exception.OrderErrorCode;
-import java.util.Set;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+
+import java.util.Set;
 
 @Getter
 @RequiredArgsConstructor

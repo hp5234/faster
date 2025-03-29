@@ -4,11 +4,12 @@ import com.faster.order.app.order.domain.entity.Order;
 import com.faster.order.app.order.domain.entity.OrderItem;
 import com.faster.order.app.order.domain.entity.OrdererInfo;
 import com.faster.order.app.order.domain.enums.OrderStatus;
+import lombok.Builder;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
-import lombok.Builder;
 
 @Builder
 public record IGetOrderDetailApplicationResponseDto(

@@ -1,8 +1,9 @@
 package com.faster.message.app.message.presentation.dto.request;
 
+import lombok.Builder;
+
 import java.util.List;
 import java.util.UUID;
-import lombok.Builder;
 
 @Builder
 public record PSaveMessageRequestDto(

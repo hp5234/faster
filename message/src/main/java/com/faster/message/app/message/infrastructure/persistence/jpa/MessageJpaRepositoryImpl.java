@@ -1,22 +1,23 @@
 package com.faster.message.app.message.infrastructure.persistence.jpa;
 
-import static com.faster.message.app.message.domain.entity.QMessage.message;
-
 import com.faster.message.app.message.domain.entity.Message;
 import com.faster.message.app.message.domain.enums.MessageType;
 import com.faster.message.app.message.presentation.dto.response.PGetAllMessageResponseDto;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.List;
+
+import static com.faster.message.app.message.domain.entity.QMessage.message;
 
 
 @RequiredArgsConstructor

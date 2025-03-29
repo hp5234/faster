@@ -1,10 +1,11 @@
 package com.faster.gateway.app.global.security.service.dto;
 
 import com.common.resolver.dto.UserRole;
-import java.util.ArrayList;
-import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+
+import java.util.ArrayList;
+import java.util.Collection;
 
 public record UserDetailsDto(
     Long id,

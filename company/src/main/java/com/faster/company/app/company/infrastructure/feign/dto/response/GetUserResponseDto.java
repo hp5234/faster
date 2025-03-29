@@ -1,6 +1,7 @@
 package com.faster.company.app.company.infrastructure.feign.dto.response;
 
 import com.faster.company.app.company.application.dto.response.GetUserApplicationResponseDto;
+
 import java.time.LocalDateTime;
 
 public record GetUserResponseDto(

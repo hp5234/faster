@@ -3,12 +3,13 @@ package com.faster.product.app.product.infrastructure.persistence.jpa;
 import com.faster.product.app.product.domain.entity.Product;
 import com.faster.product.app.product.domain.repository.ProductRepository;
 import jakarta.persistence.LockModeType;
-import java.util.Optional;
-import java.util.UUID;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Lock;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+
+import java.util.Optional;
+import java.util.UUID;
 
 public interface ProductJpaRepository  extends JpaRepository<Product, UUID>,
     ProductJpaRepositoryCustom, ProductRepository {

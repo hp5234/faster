@@ -1,6 +1,7 @@
 package com.faster.order.app.order.presentation.dto.response;
 
 import com.faster.order.app.order.application.dto.response.InternalUpdateOrderStatusApplicationResponseDto;
+
 import java.util.UUID;
 
 public record InternalUpdateOrderStatusResponseDto(

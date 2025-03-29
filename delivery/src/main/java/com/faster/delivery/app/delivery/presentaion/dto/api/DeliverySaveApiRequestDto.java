@@ -1,8 +1,9 @@
 package com.faster.delivery.app.delivery.presentaion.dto.api;
 
 import com.faster.delivery.app.delivery.application.dto.DeliverySaveDto;
-import java.util.UUID;
 import lombok.Builder;
+
+import java.util.UUID;
 
 @Builder
 public record DeliverySaveApiRequestDto(

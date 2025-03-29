@@ -1,6 +1,7 @@
 package com.faster.user.app.user.application.dto.response;
 
 import com.faster.user.app.user.domain.entity.User;
+
 import java.time.LocalDateTime;
 
 public record AGetUserResponseDto(

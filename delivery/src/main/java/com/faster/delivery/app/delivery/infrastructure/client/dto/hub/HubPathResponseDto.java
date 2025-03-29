@@ -1,9 +1,10 @@
 package com.faster.delivery.app.delivery.infrastructure.client.dto.hub;
 
 import com.faster.delivery.app.delivery.application.dto.HubRouteDto;
+import lombok.Builder;
+
 import java.util.List;
 import java.util.UUID;
-import lombok.Builder;
 
 @Builder
 public record HubPathResponseDto(

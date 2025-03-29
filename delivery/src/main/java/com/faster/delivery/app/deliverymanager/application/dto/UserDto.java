@@ -1,7 +1,8 @@
 package com.faster.delivery.app.deliverymanager.application.dto;
 
-import java.time.LocalDateTime;
 import lombok.Builder;
+
+import java.time.LocalDateTime;
 
 @Builder
 public record UserDto(

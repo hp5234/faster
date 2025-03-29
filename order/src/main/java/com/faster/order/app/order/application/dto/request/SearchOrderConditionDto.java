@@ -2,9 +2,10 @@ package com.faster.order.app.order.application.dto.request;
 
 import com.faster.order.app.order.domain.criteria.SearchOrderCriteria;
 import com.faster.order.app.order.domain.enums.OrderStatus;
+import lombok.Builder;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import lombok.Builder;
 
 @Builder
 public record SearchOrderConditionDto(

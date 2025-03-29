@@ -1,10 +1,11 @@
 package com.faster.user.app.user.infrastructure.persistence.jpa.dto;
 
 import com.common.resolver.dto.UserRole;
-import java.time.LocalDateTime;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.time.LocalDateTime;
 
 
 @Getter

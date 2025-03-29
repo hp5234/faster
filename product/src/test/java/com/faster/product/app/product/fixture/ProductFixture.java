@@ -1,6 +1,7 @@
 package com.faster.product.app.product.fixture;
 
 import com.faster.product.app.product.domain.entity.Product;
+
 import java.math.BigDecimal;
 import java.util.UUID;
 

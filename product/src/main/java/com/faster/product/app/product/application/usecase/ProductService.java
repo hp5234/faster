@@ -2,20 +2,12 @@ package com.faster.product.app.product.application.usecase;
 
 import com.common.resolver.dto.CurrentUserInfoDto;
 import com.common.response.PageResponse;
-import com.faster.product.app.product.application.dto.request.GetProductsApplicationResponseDto;
-import com.faster.product.app.product.application.dto.request.SearchProductConditionDto;
-import com.faster.product.app.product.application.dto.request.SortedUpdateStocksApplicationRequestDto;
-import com.faster.product.app.product.application.dto.request.UpdateProductApplicationRequestDto;
-import com.faster.product.app.product.application.dto.request.UpdateProductHubApplicationRequestDto;
-import com.faster.product.app.product.application.dto.response.SearchProductApplicationResponseDto;
-import com.faster.product.app.product.application.dto.response.UpdateProductHubApplicationResponseDto;
-import com.faster.product.app.product.application.dto.response.UpdateStocksApplicationResponseDto;
-import com.faster.product.app.product.application.dto.response.GetProductDetailApplicationResponseDto;
-import com.faster.product.app.product.application.dto.response.UpdateProductApplicationResponseDto;
-import com.faster.product.app.product.application.dto.request.SaveProductApplicationRequestDto;
+import com.faster.product.app.product.application.dto.request.*;
+import com.faster.product.app.product.application.dto.response.*;
+import org.springframework.data.domain.Pageable;
+
 import java.util.Set;
 import java.util.UUID;
-import org.springframework.data.domain.Pageable;
 
 public interface ProductService {
 

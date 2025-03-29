@@ -1,7 +1,8 @@
 package com.faster.product.app.product.application.dto.request;
 
-import java.math.BigDecimal;
 import lombok.Builder;
+
+import java.math.BigDecimal;
 
 @Builder
 public record UpdateProductApplicationRequestDto(

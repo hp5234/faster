@@ -5,8 +5,8 @@ import com.common.response.PageResponse;
 import com.faster.message.app.message.application.dto.request.ASaveMessageRequestDto;
 import com.faster.message.app.message.application.dto.response.ASaveMessageResponseDto;
 import com.faster.message.app.message.presentation.dto.response.PGetAllMessageResponseDto;
+
 import java.time.LocalDate;
-import java.util.UUID;
 
 public interface MessageService {
 

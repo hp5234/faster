@@ -1,9 +1,5 @@
 package com.faster.delivery.app.delivery.infrastructure.jpa;
 
-import static com.faster.delivery.app.delivery.domain.entity.QDelivery.delivery;
-import static com.faster.delivery.app.delivery.domain.entity.QDeliveryRoute.deliveryRoute;
-import static com.faster.delivery.app.global.common.QueryDslUtil.nullSafeBuilder;
-
 import com.faster.delivery.app.delivery.domain.criteria.DeliveryCriteria;
 import com.faster.delivery.app.delivery.domain.entity.Delivery;
 import com.faster.delivery.app.delivery.domain.entity.DeliveryRoute;
@@ -13,13 +9,18 @@ import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.types.OrderSpecifier;
 import com.querydsl.jpa.impl.JPAQuery;
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.support.PageableExecutionUtils;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+import static com.faster.delivery.app.delivery.domain.entity.QDelivery.delivery;
+import static com.faster.delivery.app.delivery.domain.entity.QDeliveryRoute.deliveryRoute;
+import static com.faster.delivery.app.global.common.QueryDslUtil.nullSafeBuilder;
 
 @RequiredArgsConstructor
 public class DeliveryRepositoryCustomImpl implements DeliveryRepositoryCustom {

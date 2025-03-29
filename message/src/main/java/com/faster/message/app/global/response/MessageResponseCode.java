@@ -1,6 +1,5 @@
 package com.faster.message.app.global.response;
 
-import com.common.exception.type.ErrorCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
