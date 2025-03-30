@@ -1,0 +1,19 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/internal/companies/00000000-0000-0000-0000-000000000001"
+  },
+  "response": {
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "status": 200,
+    "jsonBody": {
+      "message" : "success",
+      "code" : 200,
+      "data": {
+        "companyId" : "00000000-0000-0000-0000-000000000001"
+      }
+    }
+  }
+}

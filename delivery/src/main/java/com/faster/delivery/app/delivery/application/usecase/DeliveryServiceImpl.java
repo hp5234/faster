@@ -42,6 +42,7 @@ public class DeliveryServiceImpl implements DeliveryService {
   private final MessageClient messageClient;
 
   @Transactional
+  @Override
   public UUID saveDelivery(DeliverySaveDto deliverySaveDto) {
 
     // 수취 업체 정보 조회
@@ -59,11 +60,13 @@ public class DeliveryServiceImpl implements DeliveryService {
     // 업체 배송 담당자 지정
     AssignDeliveryManagerApplicationResponse deliveryManagerDto =
         deliveryManagerClient.assignCompanyDeliveryManager(
-            deliverySaveDto.destinationHubId(), DeliveryManagerType.COMPANY_DELIVERY, 1);
+            deliverySaveDto.destinationHubId(), DeliveryManagerType.COMPANY_DELIVERY, 1
+        );
 
     // 배송 정보 구성
-    AssignDeliveryManagerApplicationResponse.DeliveryManagerInfo assignCompanyDeliveryManager = deliveryManagerDto.deliveryManagers()
-        .get(0);
+    AssignDeliveryManagerApplicationResponse.DeliveryManagerInfo assignCompanyDeliveryManager =
+            deliveryManagerDto.deliveryManagers().get(0);
+
     Delivery delivery =
         Delivery.builder()
         .orderId(deliverySaveDto.orderId())
@@ -97,6 +100,7 @@ public class DeliveryServiceImpl implements DeliveryService {
   }
 
   @Transactional(readOnly = true)
+  @Override
   public DeliveryDetailDto getDeliveryDetail(UUID deliveryId, CurrentUserInfoDto userInfoDto) {
     // 배송 조회
     Delivery delivery = deliveryRepository.findByIdAndDeletedAtIsNull(deliveryId)
@@ -143,6 +147,7 @@ public class DeliveryServiceImpl implements DeliveryService {
   }
 
   @Transactional
+  @Override
   public UUID updateDeliveryStatus (CurrentUserInfoDto userInfoDto, UUID deliveryId,
       DeliveryUpdateDto deliveryUpdateDto) {
 
@@ -172,6 +177,7 @@ public class DeliveryServiceImpl implements DeliveryService {
   }
 
   @Transactional
+  @Override
   public UUID deleteDelivery(UUID deliveryId, CurrentUserInfoDto userInfoDto) {
     // 배송 정보 조회
     Delivery delivery = deliveryRepository.findByIdAndDeletedAtIsNull(deliveryId)
@@ -186,6 +192,7 @@ public class DeliveryServiceImpl implements DeliveryService {
   }
 
   @Transactional
+  @Override
   public UUID saveDeliveryInternal(DeliverySaveApplicationDto deliverySaveDto) {
 
     // 업체 정보 조회
@@ -224,65 +231,8 @@ public class DeliveryServiceImpl implements DeliveryService {
     return savedDelivery.getId();
   }
 
-  private Delivery saveDelivery(
-      DeliverySaveApplicationDto deliverySaveDto,
-      AssignDeliveryManagerApplicationResponse.DeliveryManagerInfo deliveryManagerDto,
-      CompanyDto supplierCompany,
-      CompanyDto receiveCompany,
-      List<DeliveryRoute> deliveryRouteList
-  ) {
-    Delivery delivery = Delivery.builder()
-        .orderId(deliverySaveDto.orderId())
-        .companyDeliveryManagerId(deliveryManagerDto.deliveryManagerId())
-        .sourceHubId(supplierCompany.hubId())
-        .destinationHubId(receiveCompany.hubId())
-        .receiptCompanyId(receiveCompany.companyId())
-        .receiptCompanyAddress(receiveCompany.address())
-        .recipientName(receiveCompany.companyManagerName())
-        .recipientSlackId(receiveCompany.companyManagerSlackId())
-        .build();
-
-    delivery.addDeliveryRouteList(deliveryRouteList);
-
-    // save
-    Delivery savedDelivery = deliveryRepository.save(delivery);
-    return savedDelivery;
-  }
-
-  // 이벤트 리스너로 변경하면 좋을 듯
-  private void sendMessage(List<HubDto> hubListData, UUID sourceHubId,
-      UUID destinationHubId, Delivery savedDelivery, List<AssignDeliveryManagerApplicationResponse.DeliveryManagerInfo> deliveryManagers) {
-    StringBuilder waypointNames = new StringBuilder("|");
-    String hubSourceName = null;
-    String hubDestinationName = null;
-    for(HubDto hubDto : hubListData){
-      UUID hubId = hubDto.hubId();
-      if(hubId.equals(sourceHubId)) {
-        hubSourceName = hubDto.name();
-        continue;
-      }
-      if(hubId.equals(destinationHubId)) {
-        hubDestinationName = hubDto.name();
-        continue;
-      }
-      waypointNames.append(hubDto.name()).append("|");
-    }
-
-    // 메시지 전송
-    messageClient.sendMessage(
-        SendMessageApplicationRequestDto.builder()
-            .deliveryId(savedDelivery.getId())
-            .hubSourceId(sourceHubId)
-            .receiveHubId(destinationHubId)
-            .hubSourceName(hubSourceName)
-            .hubWaypointName(waypointNames.toString())
-            .hubDestinationName(hubDestinationName)
-            .orderInfo(SendMessageApplicationRequestDto.OrderInfo.from(savedDelivery))
-            .deliveryManagers(deliveryManagers.stream().map(DeliveryManagerInfo::from).toList())
-            .build());
-  }
-
   @Transactional
+  @Override
   public UUID updateDeliveryStatusInternal(
       UUID deliveryId, DeliveryUpdateDto deliveryUpdateDto, CurrentUserInfoDto userInfoDto) {
 
@@ -301,16 +251,8 @@ public class DeliveryServiceImpl implements DeliveryService {
     return delivery.getId();
   }
 
-  private OrderUpdateApplicationResponseDto updateOrderStatus(Status deliveryStatus, Delivery delivery) {
-
-    if (deliveryStatus.isOrderUpdateRequired()) {
-      return orderClient.updateOrderStatus(
-          delivery.getOrderId(), OrderUpdateApplicationRequestDto.of(deliveryStatus.toString()));
-    }
-    return null;
-  }
-
   @Transactional
+  @Override
   public UUID updateDeliverRoute(UUID deliveryId, UUID deliveryRouteId,
       DeliveryRouteUpdateDto deliveryRouteUpdateDto,
       CurrentUserInfoDto userInfoDto) {
@@ -366,25 +308,25 @@ public class DeliveryServiceImpl implements DeliveryService {
     }
   }
 
-  @Override
   @Transactional
+  @Override
   public List<AssignedDeliveryRouteDto> assignHubDeliveryManagerScheduleService() {
     List<DeliveryRoute> routes = deliveryRepository.findRoutesWithMissingManager();
 
     // 출발지로 분리
     Map<UUID, List<DeliveryRoute>> deliveryRoutesOfSourceHubId = routes.stream()
-        .collect(Collectors.groupingBy(DeliveryRoute::getSourceHubId));
+            .collect(Collectors.groupingBy(DeliveryRoute::getSourceHubId));
     for(Entry<UUID, List<DeliveryRoute>> entry : deliveryRoutesOfSourceHubId.entrySet()){
       // 배송 담당자 배정 요청 명수 N명 (같은 출발지에서 다른 배송지 N개)
       int requiredAssignManagerCount = entry.getValue().size();
       List<AssignDeliveryManagerApplicationResponse.DeliveryManagerInfo> deliveryManagerInfos =
-          deliveryManagerClient.assignCompanyDeliveryManager(
-                  null, DeliveryManagerType.HUB_DELIVERY, requiredAssignManagerCount)
-              .deliveryManagers();
+              deliveryManagerClient.assignCompanyDeliveryManager(
+                              null, DeliveryManagerType.HUB_DELIVERY, requiredAssignManagerCount)
+                      .deliveryManagers();
 
       // 목적지로 분리
       Map<UUID, List<DeliveryRoute>> deliveryRoutesOfDestinationHubId = entry.getValue().stream()
-          .collect(Collectors.groupingBy(DeliveryRoute::getDestinationHubId));
+              .collect(Collectors.groupingBy(DeliveryRoute::getDestinationHubId));
       int deliveryManagerInfosIdx = 0;
       for(Entry<UUID, List<DeliveryRoute>> sameRoutesEntry : deliveryRoutesOfDestinationHubId.entrySet()){
         // 출발지 - 목적지 같으면 하나의 배정담당자에게 지정
@@ -398,6 +340,73 @@ public class DeliveryServiceImpl implements DeliveryService {
     }
 
     return null;
+  }
+
+  private OrderUpdateApplicationResponseDto updateOrderStatus(Status deliveryStatus, Delivery delivery) {
+
+    if (deliveryStatus.isOrderUpdateRequired()) {
+      return orderClient.updateOrderStatus(
+              delivery.getOrderId(), OrderUpdateApplicationRequestDto.of(deliveryStatus.toString()));
+    }
+    return null;
+  }
+
+  private Delivery saveDelivery(
+          DeliverySaveApplicationDto deliverySaveDto,
+          AssignDeliveryManagerApplicationResponse.DeliveryManagerInfo deliveryManagerDto,
+          CompanyDto supplierCompany,
+          CompanyDto receiveCompany,
+          List<DeliveryRoute> deliveryRouteList
+  ) {
+    Delivery delivery = Delivery.builder()
+            .orderId(deliverySaveDto.orderId())
+            .companyDeliveryManagerId(deliveryManagerDto.deliveryManagerId())
+            .sourceHubId(supplierCompany.hubId())
+            .destinationHubId(receiveCompany.hubId())
+            .receiptCompanyId(receiveCompany.companyId())
+            .receiptCompanyAddress(receiveCompany.address())
+            .recipientName(receiveCompany.companyManagerName())
+            .recipientSlackId(receiveCompany.companyManagerSlackId())
+            .build();
+
+    delivery.addDeliveryRouteList(deliveryRouteList);
+
+    // save
+    Delivery savedDelivery = deliveryRepository.save(delivery);
+    return savedDelivery;
+  }
+
+  // 이벤트 리스너로 변경하면 좋을 듯
+  private void sendMessage(List<HubDto> hubListData, UUID sourceHubId,
+                           UUID destinationHubId, Delivery savedDelivery, List<AssignDeliveryManagerApplicationResponse.DeliveryManagerInfo> deliveryManagers) {
+    StringBuilder waypointNames = new StringBuilder("|");
+    String hubSourceName = null;
+    String hubDestinationName = null;
+    for(HubDto hubDto : hubListData){
+      UUID hubId = hubDto.hubId();
+      if(hubId.equals(sourceHubId)) {
+        hubSourceName = hubDto.name();
+        continue;
+      }
+      if(hubId.equals(destinationHubId)) {
+        hubDestinationName = hubDto.name();
+        continue;
+      }
+      waypointNames.append(hubDto.name()).append("|");
+    }
+
+    // 메시지 전송
+    messageClient.sendMessage(
+            SendMessageApplicationRequestDto.builder()
+                    .deliveryId(savedDelivery.getId())
+                    .hubSourceId(sourceHubId)
+                    .receiveHubId(destinationHubId)
+                    .hubSourceName(hubSourceName)
+                    .hubWaypointName(waypointNames.toString())
+                    .hubDestinationName(hubDestinationName)
+                    .orderInfo(SendMessageApplicationRequestDto.OrderInfo.from(savedDelivery))
+                    .deliveryManagers(deliveryManagers.stream().map(DeliveryManagerInfo::from).toList())
+                    .build());
   }
 
   private void checkRole(CurrentUserInfoDto userInfoDto, Delivery delivery) {

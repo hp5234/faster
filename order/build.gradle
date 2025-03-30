@@ -71,6 +71,9 @@ dependencies {
 
 	// swagger
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.5'
+
+	// wiremock
+	implementation 'org.wiremock.integrations:wiremock-spring-boot:3.6.0'
 }
 
 tasks.named('test') {
